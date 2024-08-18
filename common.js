@@ -58,6 +58,7 @@ const startTimer = () => {
         highScore.innerText = `최고점수: ${Math.max(
           ...JSON.parse(localStorage.getItem('scores'))
         )}`;
+        localStorage.removeItem('words');
       }
     } else {
       line.style.width = percentage + '%';
@@ -70,7 +71,7 @@ const sameWord = (word) => {
   wordData.push(useWord);
   localStorage.setItem('words', JSON.stringify(wordData));
   if (
-    JSON.parse(localStorage.getItem('words')).filter((x) => x == `${word}`)
+    JSON.parse(localStorage.getItem('words')).filter((x) => x == `${word}`) // 만약 입력한 단어가 있다면
       .length >= 2
   ) {
     return false;
@@ -108,7 +109,7 @@ const wordTest = async () => {
         highScore.innerText = `최고점수: ${Math.max(
           ...JSON.parse(localStorage.getItem('scores'))
         )}`;
-        localStorage.removeItem('words');
+        localStorage.removeItem('words'); // 게임이 끝나면 입력한 단어들을 초기화
       }
     }
   } catch {
