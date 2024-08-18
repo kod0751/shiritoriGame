@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-style: none;
+}
+
+body {
+  background-color: #eef5ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'NanumSquareNeoHeavy';
+}
+
+/* 초기화면 */
+
+.startScreen {
+  position: absolute;
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  z-index: 10;
+}
+
+.desp {
+  font-size: 1.2rem;
+  color: #164863;
+}
+
+.startBtn {
+  background-color: #164863;
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'NanumSquareNeoHeavy';
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* 메인화면 */
+
+.con {
+  position: relative;
+  background-color: white;
+  max-width: 1400px;
+  width: 60%;
+  height: 600px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer {
+  position: absolute;
+  top: 30px;
+  width: 75%;
+  height: 10px;
+}
+
+.line {
+  width: 0;
+  height: 100%;
+  background-color: #164863;
+  transform-origin: left;
+}
+
+.score {
+  color: #164863;
+  position: absolute;
+  right: 20px;
+  top: -35px;
+}
+
+.heart {
+  position: absolute;
+  display: flex;
+  top: -55px;
+  gap: 0.7rem;
+}
+
+.bx bxs-heart {
+  color: #164863;
+}
+
+.mainSec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+h1 {
+  color: #164863;
+  font-size: 2.5rem;
+}
+
+.curWord {
+  color: #164863;
+  font-size: 1.2rem;
+}
+
+.wordInput {
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  border: 3px solid #164863;
+  outline: none;
+  font-family: 'NanumSquareNeoHeavy';
+  font-size: 1.2rem;
+  color: #164863;
+}
+
+.searchBtn {
+  background-color: #164863;
+  color: white;
+  font-family: 'NanumSquareNeoHeavy';
+  font-size: 1.2rem;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* 모달 */
+
+.modal {
+  position: absolute;
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  z-index: 20;
+}
+
+.highScore,
+.curScore {
+  color: #164863;
+  font-size: 1.2rem;
+}
+
+.closeBtn {
+  background-color: #164863;
+  color: white;
+  font-family: 'NanumSquareNeoHeavy';
+  font-size: 1.2rem;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* 기능 */
+
+.none {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}

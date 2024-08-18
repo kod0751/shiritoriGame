@@ -1,0 +1,49 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dictionary Search</title>
+    <link
+      href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <section id="startScreen" class="startScreen">
+      <h1>끝말잇기 게임</h1>
+      <span class="desp">제한시간 10초내에 단어를 입력해주세요!~</span>
+      <button id="startBtn" class="startBtn">시작하기</button>
+    </section>
+
+    <div class="con">
+      <div class="timer">
+        <div id="line" class="line"></div>
+      </div>
+      <span id="score" class="score"></span>
+      <div class="heart" id="heart">
+        <i class="bx bxs-heart bx-md" style="color: #164863"></i>
+        <i class="bx bxs-heart bx-md" style="color: #164863"></i>
+        <i class="bx bxs-heart bx-md" style="color: #164863"></i>
+      </div>
+      <section class="mainSec" id="mainSec">
+        <h1>끝말잇기 게임</h1>
+        <span id="curWord" class="curWord"></span>
+        <input type="text" class="wordInput" style="text-align: center" />
+        <button id="searchBtn" class="searchBtn">끝말잇기</button>
+      </section>
+    </div>
+
+    <section id="modal" class="modal">
+      <h1>끝말잇기 게임</h1>
+      <span id="highScore" class="highScore"></span>
+      <span id="curScore" class="curScore"></span>
+      <button id="closeBtn" class="closeBtn">닫기</button>
+    </section>
+
+    <script src="common.js"></script>
+  </body>
+</html>
