@@ -18,7 +18,7 @@ let currentScore = 100;
 let timer;
 
 const scoreData = JSON.parse(localStorage.getItem('scores')) || [];
-const high = localStorage.getItem('scores') || [];
+const wordData = JSON.parse(localStorage.getItem('words')) || [];
 
 const setting = () => {
   const defaultWord = ['가마', '나비', '다과', '라면', '마차', '바지', '사자'];
@@ -65,6 +65,20 @@ const startTimer = () => {
   }, 50);
 };
 
+const sameWord = (word) => {
+  const useWord = word;
+  wordData.push(useWord);
+  localStorage.setItem('words', JSON.stringify(wordData));
+  if (
+    JSON.parse(localStorage.getItem('words')).filter((x) => x == `${word}`)
+      .length >= 2
+  ) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
 const wordTest = async () => {
   const query = wordInput.value;
   const url = `http://localhost:3000/api/dictionary?q=${query}&key=${API_KEY}`;
@@ -74,7 +88,9 @@ const wordTest = async () => {
 
     if (
       data.channel &&
-      curWord.innerText.charAt(curWord.innerText.length - 1) == query.charAt(0)
+      curWord.innerText.charAt(curWord.innerText.length - 1) ==
+        query.charAt(0) &&
+      sameWord(query)
     ) {
       curWord.textContent = `현재단어: ${query}`;
       currentScore += 10;
@@ -92,6 +108,7 @@ const wordTest = async () => {
         highScore.innerText = `최고점수: ${Math.max(
           ...JSON.parse(localStorage.getItem('scores'))
         )}`;
+        localStorage.removeItem('words');
       }
     }
   } catch {
