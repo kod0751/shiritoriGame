@@ -100,6 +100,7 @@ const wordTest = async () => {
       curWord.textContent = `현재단어: ${query}`;
       currentScore += 10;
       scoreCal();
+      wordInput.value = '';
     } else {
       heart.children[falseCount].style.display = 'none';
       falseCount--;
