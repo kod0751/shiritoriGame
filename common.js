@@ -131,4 +131,11 @@ closeBtn.addEventListener('click', () => {
   location.reload();
 });
 
+wordInput.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') {
+    wordTest();
+    startTimer();
+  }
+});
+
 setting();
