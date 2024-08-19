@@ -89,7 +89,7 @@ const wordTest = async () => {
 
     if (
       data.channel &&
-      curWord.innerText.charAt(curWord.innerText.length - 1) ==
+      HanTools.dueum(curWord.innerText.charAt(curWord.innerText.length - 1)) ==
         query.charAt(0) &&
       sameWord(query)
     ) {
