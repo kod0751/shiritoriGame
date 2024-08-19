@@ -27,6 +27,17 @@ const setting = () => {
   scoreCal();
 };
 
+const falseActive = () => {
+  modal.style.display = 'flex';
+  const resultScore = currentScore;
+  scoreData.push(resultScore);
+  localStorage.setItem('scores', JSON.stringify(scoreData));
+  highScore.innerText = `최고점수: ${Math.max(
+    ...JSON.parse(localStorage.getItem('scores'))
+  )}`;
+  localStorage.removeItem('words'); // 게임이 끝나면 입력한 단어들을 초기화
+};
+
 const scoreCal = () => {
   score.innerText = `점수: ${currentScore}`;
   curScore.innerText = `점수: ${currentScore}`;
@@ -51,14 +62,7 @@ const startTimer = () => {
       scoreCal();
       startTimer();
       if (falseCount == -1) {
-        modal.style.display = 'flex';
-        const resultScore = currentScore;
-        scoreData.push(resultScore);
-        localStorage.setItem('scores', JSON.stringify(scoreData));
-        highScore.innerText = `최고점수: ${Math.max(
-          ...JSON.parse(localStorage.getItem('scores'))
-        )}`;
-        localStorage.removeItem('words');
+        falseActive();
       }
     } else {
       line.style.width = percentage + '%';
@@ -102,14 +106,7 @@ const wordTest = async () => {
       currentScore -= 10;
       scoreCal();
       if (falseCount == -1) {
-        modal.style.display = 'flex';
-        const resultScore = currentScore;
-        scoreData.push(resultScore);
-        localStorage.setItem('scores', JSON.stringify(scoreData));
-        highScore.innerText = `최고점수: ${Math.max(
-          ...JSON.parse(localStorage.getItem('scores'))
-        )}`;
-        localStorage.removeItem('words'); // 게임이 끝나면 입력한 단어들을 초기화
+        falseActive();
       }
     }
   } catch {
