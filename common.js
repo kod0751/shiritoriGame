@@ -93,8 +93,10 @@ const wordTest = async () => {
 
     if (
       data.channel &&
-      HanTools.dueum(curWord.innerText.charAt(curWord.innerText.length - 1)) ==
-        query.charAt(0) &&
+      (HanTools.dueum(curWord.innerText.charAt(curWord.innerText.length - 1)) ==
+        query.charAt(0) ||
+        curWord.innerText.charAt(curWord.innerText.length - 1) ==
+          query.charAt(0)) &&
       sameWord(query)
     ) {
       curWord.textContent = `현재단어: ${query}`;
