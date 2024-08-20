@@ -1,4 +1,4 @@
-const API_KEY = 'C7B5380B9591BBFD8F2C28E6B67A2FDC';
+const API_KEY = 키값 입력 ;
 
 const wordInput = document.querySelector('.wordInput');
 const curWord = document.getElementById('curWord');
